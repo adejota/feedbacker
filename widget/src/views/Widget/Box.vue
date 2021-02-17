@@ -2,13 +2,13 @@
   <div class="box animate__animated animate__fadeInUp animate__faster">
     <div
       :class="{
-        'justify-between': canShowAdditionalControlAndIfo,
-        'justify-end': !canShowAdditionalControlAndIfo
+        'justify-between': canShowAdditionalControlAndInfo,
+        'justify-end': !canShowAdditionalControlAndInfo
       }"
       class="relative w-full flex"
     >
       <button
-        v-if="canShowAdditionalControlAndIfo"
+        v-if="canShowAdditionalControlAndInfo"
         @click="back"
         :disabled="canGoBack"
         :class="{ invisible: canGoBack }"
@@ -20,7 +20,7 @@
       </button>
 
       <p
-        v-if="canShowAdditionalControlAndIfo"
+        v-if="canShowAdditionalControlAndInfo"
         class="text-xl font-black text-center text-brand-main"
       >
         {{ label }}
@@ -41,7 +41,7 @@
 
     <div
       class="text-gray-800 text-sm flex"
-      v-if="canShowAdditionalControlAndIfo"
+      v-if="canShowAdditionalControlAndInfo"
     >
       <icon
         name="chat" class="mr-1" :color="brandColors.graydark"
@@ -56,9 +56,9 @@
 
 <script lang="ts">
 import { defineComponent, computed, ComputedRef, SetupContext } from 'vue'
-import { brand } from '../../../palette'
-import Icon from '../../components/Icon'
-import Wizard from '../../components/Wizard'
+import { brand } from '../../../palette.js'
+import Icon from '../../components/Icon/index.vue'
+import Wizard from '../../components/Wizard/index.vue'
 import colors from 'tailwindcss/colors'
 import useStore from '../../hooks/store'
 import useNavigation, { Navigation } from '../../hooks/navigation'
@@ -102,7 +102,7 @@ export default defineComponent({
       return store.currentComponent === 'SelectFeedbackType'
     })
 
-    const canShowAdditionalControlAndIfo = computed<boolean>(() => {
+    const canShowAdditionalControlAndInfo = computed<boolean>(() => {
       return store.currentComponent !== 'Success' && store.currentComponent !== 'Error'
     })
 
@@ -113,7 +113,7 @@ export default defineComponent({
       label,
       back,
       canGoBack,
-      canShowAdditionalControlAndIfo
+      canShowAdditionalControlAndInfo
     }
   }
 

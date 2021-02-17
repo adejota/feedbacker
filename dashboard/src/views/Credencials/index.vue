@@ -58,7 +58,14 @@
 
       <div v-else class="py-3 pl-5 pr-20 mt-2 rounded bg-brand-gray w-full overflow-x-scroll xl:overflow-hidden">
         <span v-if="state.hasError">Erro ao carregar o script</span>
-        <pre v-else>&lt;script src="https://adejota-feedbacker-widget.netlify.app?api_key={{ store.User.currentUser.apiKey }}"&gt;&lt;/script&gt;</pre>
+        <pre v-else>
+&lt;script
+defer
+async
+onload="init('{{store.User.currentUser.apiKey}}')"
+src="https://adejota-feedbacker-widget.netlify.app/init.js"
+&gt;&lt;/script&gt;
+        </pre>
       </div>
     </div>
   </div>
