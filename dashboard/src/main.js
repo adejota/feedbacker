@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import Toast, { POSITION } from 'vue-toastification'
 import App from './App.vue'
-import router from './router'
+import { router } from './router'
 
 // lib de animações
 import 'animate.css'
