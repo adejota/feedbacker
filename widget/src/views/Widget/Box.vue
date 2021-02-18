@@ -1,5 +1,8 @@
 <template>
-  <div class="box animate__animated animate__fadeInUp animate__faster">
+  <div
+    id="box"
+    class="box animate__animated animate__fadeInUp animate__faster"
+  >
     <div
       :class="{
         'justify-between': canShowAdditionalControlAndInfo,
@@ -21,6 +24,7 @@
 
       <p
         v-if="canShowAdditionalControlAndInfo"
+        id="box-label"
         class="text-xl font-black text-center text-brand-main"
       >
         {{ label }}
@@ -40,6 +44,7 @@
     <wizard />
 
     <div
+      id="box-footer"
       class="text-gray-800 text-sm flex"
       v-if="canShowAdditionalControlAndInfo"
     >

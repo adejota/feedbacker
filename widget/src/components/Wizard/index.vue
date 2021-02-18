@@ -1,5 +1,6 @@
 <template>
   <component
+    id="wizard"
     :is="store.currentComponent"
     @select-feedback-type="handleSelectFeedbackType"
     @next='next'
