@@ -6,7 +6,7 @@ import UsersService from './users'
 import FeedbacksService from './feedbacks'
 
 const API_ENVS = {
-  production: 'https://backend-feedbacker-flax.vercel.app',
+  production: 'https://backend-feedbacker-teal.vercel.app',
   development: '',
   local: 'http://localhost:3000'
 }
