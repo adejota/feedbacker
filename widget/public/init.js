@@ -1,10 +1,8 @@
-import FingerprintJS from '@fingerprintjs/fingerprintjs';
-
 function init (apiKey) {
 
   async function handleLoadWidget () {
     const page = `${window.location.origin}${window.location.pathname}`
-    const fp = await FingerprintJS.load()
+    const fp = await window.FingerprintJS.load()
     const fingerprint = await fp.get()
 
     const WIDGET_URL = `https://adejota-feedbacker-widget.netlify.app?api_key=${apiKey}&page=${page}&fingerprint=${fingerprint.visitorId}`
