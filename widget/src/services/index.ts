@@ -2,7 +2,7 @@ import axios from 'axios'
 import FeedbacksService from './feedbacks'
 
 const API_ENVS = {
-  production: 'https://backend-feedbacker-flax.vercel.app',
+  production: 'https://backend-feedbacker-ten.vercel.app',
   development: '',
   local: 'http://localhost:3000'
 }
