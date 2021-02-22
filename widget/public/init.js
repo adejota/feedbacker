@@ -7,7 +7,7 @@ function init (apiKey) {
 
     const WIDGET_URL = `https://adejota-feedbacker-widget.netlify.app?api_key=${apiKey}&page=${page}&fingerprint=${fingerprint.visitorId}`
     const config = { method: 'HEAD' }
-    const res = await fetch(`https://backend-feedbacker.vercel.app/apikey/exists?apikey=${apiKey}`, config)
+    const res = await fetch(`https://backend-feedbacker-ten.vercel.app/apikey/exists?apikey=${apiKey}`, config)
 
     if (res.status === 200) {
       const iframe = document.createElement('iframe')
